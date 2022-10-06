@@ -1,10 +1,4 @@
-import java.util.Random;
-
-public class Candidate{
-    public float opinionA;
-    public float opinionB;
-    public int candidateNum;
-
+class Candidate extends Person{
     public Candidate(float a, float b, int num){
         //Random random = new Random();
         // opinionA = random.nextFloat(-1, 1);
@@ -13,16 +7,4 @@ public class Candidate{
         opinionB = b;
         candidateNum = num;
     }
-
-    public void checkValues(){
-        System.out.println("Num: "+ candidateNum);
-        System.out.println("opinionA: "+ opinionA);
-        System.out.println("opinionB: "+ opinionB);
-    }
-
-    public static void main(String[] args) {
-        Candidate a = new Candidate(0.1f, 0.2f, 4);
-
-    }
-
 }
