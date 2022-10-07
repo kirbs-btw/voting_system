@@ -2,7 +2,7 @@
 public class Person{
     public float opinionA;
     public float opinionB;
-    public int candidateNum;
+    public int num;
 
     public void checkValues(){
         /*
@@ -10,6 +10,6 @@ public class Person{
         System.out.println("opinionA: "+ opinionA);
         System.out.println("opinionB: "+ opinionB);
          */
-        System.out.println(candidateNum + " " + opinionA + " " + opinionB);
+        System.out.println(num + " " + opinionA + " " + opinionB);
     }
 }
