@@ -8,6 +8,25 @@ public class Main {
         }
     }
 
+    public static void compare(List<Person> electors, List<Person>candidates){
+        for (Person elector : electors){
+            for (Person candidate : candidates){
+                float a = elector.opinionA - candidate.opinionA;
+                float b = elector.opinionB - candidate.opinionB;
+
+                float len = (float) Math.sqrt(a*a+b*b);
+
+                System.out.println(elector.num + " " + candidate.num);
+                System.out.println(a + " " + b);
+                System.out.println(len + "\n");
+
+            }
+            // find the biggest one of the 3 values
+            // return the choice of the elector
+        }
+    }
+
+
     public static void main(String[] args) {
         List<Person> candidateList = new ArrayList<>();
 
@@ -26,8 +45,10 @@ public class Main {
             electorList.add(person);
         }
 
-        checkList(candidateList);
-        checkList(electorList);
+        // checkList(candidateList);
+        // checkList(electorList);
+
+        compare(electorList, candidateList);
 
     }
 }
