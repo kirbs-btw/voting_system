@@ -1,7 +1,7 @@
+import java.util.*;
 
 public class Person{
-    public float opinionA;
-    public float opinionB;
+    public List<Float> opinions = new ArrayList<>();
     public int num;
 
     public void checkValues(){
@@ -10,6 +10,10 @@ public class Person{
         System.out.println("opinionA: "+ opinionA);
         System.out.println("opinionB: "+ opinionB);
          */
-        System.out.println(num + " " + opinionA + " " + opinionB);
+        System.out.println(num);
+        for (float opinion: opinions){
+            System.out.println(opinion);
+
+        }
     }
 }
