@@ -11,18 +11,12 @@ public class Main {
     public static void compare(List<Person> electors, List<Person>candidates){
         for (Person elector : electors){
             for (Person candidate : candidates){
-                float a = elector.opinionA - candidate.opinionA;
-                float b = elector.opinionB - candidate.opinionB;
-
-                float len = (float) Math.sqrt(a*a+b*b);
-
-                System.out.println(elector.num + " " + candidate.num);
-                System.out.println(a + " " + b);
-                System.out.println(len + "\n");
-
+                for (int i = 0; i < elector.opinions.size(); i++){
+                    float opinionDiff = elector.opinions.get(i) - candidate.opinions.get(i);
+                    System.out.println(elector.num + " " + candidate.num + " Opinions: " + i + " : " + i);
+                    System.out.println(opinionDiff);
+                }
             }
-            // find the biggest one of the 3 values
-            // return the choice of the elector
         }
     }
 
@@ -31,9 +25,9 @@ public class Main {
         List<Person> candidateList = new ArrayList<>();
 
         // hardcoded candidates
-        Candidate PersonA = new Candidate(0.1f, -0.7f, 0);
-        Candidate PersonB = new Candidate(-0.8f, 0.1f, 1);
-        Candidate PersonC = new Candidate(0.2f, -0.1f, 2);
+        Candidate PersonA = new Candidate(0, 0.1f, -0.7f);
+        Candidate PersonB = new Candidate(1, -0.8f, 0.1f);
+        Candidate PersonC = new Candidate(2, 0.2f, -0.1f);
 
         candidateList.add(PersonA);
         candidateList.add(PersonB);
@@ -41,12 +35,12 @@ public class Main {
 
         List<Person> electorList = new ArrayList<>();
         for (int i = 0; i < 100; i++){
-            Elector person = new Elector(i);
+            Elector person = new Elector(i, 2);
             electorList.add(person);
         }
 
-        // checkList(candidateList);
-        // checkList(electorList);
+        //checkList(candidateList);
+        //checkList(electorList);
 
         compare(electorList, candidateList);
 
